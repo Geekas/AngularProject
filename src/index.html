@@ -12,6 +12,16 @@
   <!-- Tenka ikelti rankintiu budu, del angular bootstrap bugo -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script>     
+    $(document).ready(function () {
+
+    });
+  </script>
+
+</head>
+
+<body>
+  <app-root></app-root>
   <script>   
     function myMap() {
       var mapProp = {
@@ -20,15 +30,8 @@
       };
       var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
     }
-    $(document).ready(function () {
-      
-    });
   </script>
 
-</head>
-
-<body>
-  <app-root></app-root>
 </body>
 
 <footer>

@@ -7,3 +7,14 @@
     font-size: 18px;
     padding: 0;
 }
+.error-message{
+    color: red;
+}
+.form{
+    margin: 10px auto;
+}
+form {
+    border: 1px solid gray;
+    border-radius: 2%;
+    padding: 5px 5px;
+}

@@ -1,5 +1,34 @@
 <div class="row wrapper">
-  <p>
-    Nepabaigta.. Iki pavakares, bandysiu pabaigti
-  </p>
+  <div class="form">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <label>First Name</label>
+      <input type="text" size="50" class="form-control" name="firstName" ngModel #firstNameRef="ngModel" required minlength="3">
+      <div class="error-message" *ngIf="firstNameRef.touched &&
+                                  firstNameRef?.errors?.required">
+        The first name is required.
+      </div>
+      <div class="error-message" *ngIf="firstNameRef.touched &&
+                            firstNameRef?.errors?.minlength">
+        You should enter minimum {{firstNameRef?.errors?.minlength.requiredLength}} characters into first name, but you entered only
+        {{firstNameRef?.errors?.minlength.actualLength}} characters.
+      </div>
+      <label>Last Name</label>
+      <input type="text" size="50" class="form-control" name="lastName" ngModel #lastNameRef="ngModel" required minlength="3">
+      <div class="error-message" *ngIf="firstNameRef.touched &&
+                                  firstNameRef?.errors?.required">
+        The Last name is required.
+      </div>
+      <div class="error-message" *ngIf="firstNameRef.touched &&
+                            lastNameRef?.errors?.minlength">
+        You should enter minimum {{lastNameRef?.errors?.minlength.requiredLength}} characters into last name, but you entered only
+        {{lastNameRef?.errors?.minlength.actualLength}} characters.
+      </div>
+      <label>E-Mail</label>
+      <input type="text" size="50" class="form-control" name="email" ngModel #email="ngModel" required pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+      <div class="error-message" *ngIf="email.touched && !email.valid">
+        Wrong email!
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+    </form>
+  </div>
 </div>
