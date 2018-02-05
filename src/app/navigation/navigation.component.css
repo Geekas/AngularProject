@@ -1,0 +1,28 @@
+.inline {
+    display: inline;
+    clear: none;
+    float: left !important;
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+.block {
+    display: block !important;
+}
+
+.navbar {
+    min-height: 5vh;
+    margin: 0;
+}
+
+li a {
+    color: brown;
+}
+
+.active {
+    color: rgb(72, 72, 233) !important;
+    background: pink !important;
+}
+a:hover {
+    color: #0056b3 !important;
+}
